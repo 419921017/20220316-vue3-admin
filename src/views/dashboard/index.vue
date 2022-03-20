@@ -13,14 +13,20 @@
 </template>
 
 <script setup lang="ts">
+import { getCurrentInstance } from "vue";
+
+const { proxy } = getCurrentInstance()!
+
 const sayHi = () => {
-  alert("hi svg");
+  console.log(proxy)
+  proxy?.$message.success('success info!')
 };
+
 </script>
 <style lang="scss">
 .custom-class {
   // 自定义样式404
   font-size: 200px;
-  color: green;
+  color: #008000;
 }
 </style>
